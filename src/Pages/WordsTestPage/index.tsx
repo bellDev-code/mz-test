@@ -1,8 +1,11 @@
+import ProgressMobileStepper from '@Components/ProgressBar'
 import React from 'react'
 
 const WordsTestPage = () => {
   return (
-    <div>WordsTestPage</div>
+    <div className='flex items-center justify-center'>
+      <ProgressMobileStepper />
+    </div>
   )
 }
 
