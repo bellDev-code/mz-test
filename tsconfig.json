@@ -24,7 +24,7 @@
       "@Components/*": ["src/Components/*"],
       "@Layouts/*": ["src/Layouts/*"],
       "@Pages/*": ["src/Pages/*"],
-      "@Configure/*": ["src/configure/*"],
+      "@Configure/*": ["src/Configure/*"],
       "@src": ["src/*"]
     }
   },
