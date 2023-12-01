@@ -1,10 +1,19 @@
+import React, { useState } from 'react'
 import ProgressMobileStepper from '@Components/ProgressBar'
-import React from 'react'
+import Questions from '@Components/Question'
 
 const WordsTestPage = () => {
+  const [ progress, setProgress ] = useState<number>(0)
+
+  const handleProgress = (newProgress: number) => {
+    setProgress(newProgress)
+  }
+  
   return (
-    <div className='flex items-center justify-center'>
-      <ProgressMobileStepper />
+    <div className='flex flex-col items-center justify-center'>
+      <ProgressMobileStepper activeStep={progress} />
+
+      <Questions onProgressChange={handleProgress} />
     </div>
   )
 }
