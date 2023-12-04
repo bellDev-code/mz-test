@@ -1,49 +1,24 @@
-import React, {useState} from 'react';
-import { useTheme } from '@mui/material/styles';
+import React from 'react';
 import MobileStepper from '@mui/material/MobileStepper';
-import Button from '@mui/material/Button';
-import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 
-const ProgressMobileStepper = () => {
-  const theme = useTheme();
-  const [activeStep, setActiveStep] = useState<number>(0);
+interface IProps {
+  activeStep: number;
+}
 
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  };
-
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
+const ProgressMobileStepper = ({ activeStep }: IProps) => {
 
   return (
     <MobileStepper
+      className='w-full flex justify-center'
       variant="progress"
+      // 질문 길이에 따라 설정 값
       steps={6}
       position="static"
       activeStep={activeStep}
       sx={{ maxWidth: 400, flexGrow: 1 }}
-      nextButton={
-        <Button size="small" onClick={handleNext} disabled={activeStep === 5}>
-          Next
-          {theme.direction === 'rtl' ? (
-            <KeyboardArrowLeft />
-          ) : (
-            <KeyboardArrowRight />
-          )}
-        </Button>
-      }
-      backButton={
-        <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-          {theme.direction === 'rtl' ? (
-            <KeyboardArrowRight />
-          ) : (
-            <KeyboardArrowLeft />
-          )}
-          Back
-        </Button>
-      }
+      // 커스텀 시 적용
+      nextButton={null}
+      backButton={null}
     />
   );
 }
