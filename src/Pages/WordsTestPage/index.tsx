@@ -8,7 +8,7 @@ const WordsTestPage = () => {
   const handleProgress = (newProgress: number) => {
     setProgress(newProgress)
   }
-  
+
   return (
     <div className='flex flex-col items-center justify-center'>
       <ProgressMobileStepper activeStep={progress} />

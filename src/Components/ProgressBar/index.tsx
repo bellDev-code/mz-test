@@ -11,6 +11,7 @@ const ProgressMobileStepper = ({ activeStep }: IProps) => {
     <MobileStepper
       className='w-full flex justify-center'
       variant="progress"
+      // 질문 길이에 따라 설정 값
       steps={6}
       position="static"
       activeStep={activeStep}
